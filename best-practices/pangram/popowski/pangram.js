@@ -16,7 +16,7 @@ function getFormInput(value){
            } 
     }
     return tmp;
-    console.log(tmp);
+    console.log(tmp);l
 }
 
 
@@ -25,7 +25,7 @@ function isPangram (value){
     if (value.length===0){
         
         document.getElementById("result").innerHTML = 'To jest pangram';
-        
+        document.getElementById("missingLetters").innerHTML = " ";
     }else{
         document.getElementById("result").innerHTML = 'To nie jest pangram';
         document.getElementById("missingLetters").innerHTML = getFormInput(getValue());
