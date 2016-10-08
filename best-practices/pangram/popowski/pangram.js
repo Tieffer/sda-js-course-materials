@@ -2,7 +2,7 @@
 var array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n' ,'o', 'p', 'r', 's', 't','u', 'w', 'x', 'y', 'z'];
 
 function getValue(){
-   var value= document.getElementById("pangramInput").value;
+   var value= document.getElementById("pangramInput").value.toLowerCase();
    
    return value.split(''); 
    
@@ -16,7 +16,7 @@ function getFormInput(value){
            } 
     }
     return tmp;
-    console.log(tmp);l
+    console.log(tmp);
 }
 
 
