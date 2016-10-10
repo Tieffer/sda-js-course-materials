@@ -5,7 +5,29 @@ describe('fake suite', function () {
 });
 
 describe('Gets raw number from CSS measurement Unit', function () {
-  /**
+ it('jest Stringiem', function(){
+    expect(getRawNumberFromCSSUnit('100px')).toBe(100); 
+    expect(getRawNumberFromCSSUnit('100em')).toBe(100); 
+    
+ }) ;
+ 
+  it('jest Procenami', function(){
+    expect(getRawNumberFromCSSUnit('100%')).toBe(100); 
+ }) ;
+ 
+ 
+    it('czy zwraca wyjatek', function(){
+         function foo (){
+        getRawNumberFromCSSUnit(12);
+        };
+      expect(foo).toThrow(new Error('argument must be typeof string'));
+ }) ;
+    it('jest ulamkiem', function(){
+       
+    expect(getRawNumberFromCSSUnit('1.4px')).toBe(1.4); 
+ }) ;
+    
+    /**
    * List of missing test cases:
    * - test px, em, % values
    * - test integer and floating pint numbers (remember about 0.5 and .5 options)
@@ -15,7 +37,21 @@ describe('Gets raw number from CSS measurement Unit', function () {
 });
 
 describe('FizzBuzzNumber returns', function () {
-  /**
+  
+      it('dzielnik nie jest liczba', function(){
+          function fizz(){
+             fizBuzzNumber('dupa'); 
+          }
+    expect(fizz).toThrow(new Error('argument must be typeof number')); 
+ }) ;
+ 
+       it('wynik z dzielenia zawiera liczbe ', function(){
+         
+    expect(fizBuzzNumber(15)).toEqual('fizzbuzz'); 
+ }) ;
+ 
+ 
+    /**
    * List of missing test cases:
    * - test far all possible return options (remember about integers and floating point numbers as arguments)
    * - test for non number arguments
@@ -23,6 +59,24 @@ describe('FizzBuzzNumber returns', function () {
 });
 
 describe('Password validator returns', function () {
+    
+     it('password spelnia wymagania', function(){
+    
+     expect(passwordValidator('DupaCycki01')).toBe(true); 
+ });
+      it('password nie spelnia wymagan (za krotki)', function(){
+    
+     expect(passwordValidator('Dupa')).toBe(false); 
+ });
+ 
+  it('password nie spelnia wymagan (nie zawiera liczb)', function(){
+    
+     expect(passwordValidator('DupaCycki')).toBe(false); 
+ });
+   it('password nie spelnia wymagan (nie zawiera wielkich liter)', function(){
+    
+     expect(passwordValidator('dupacycki01')).toBe(false); 
+ });
   /**
    * List of missing test cases:
    * - remember about wrong argument type

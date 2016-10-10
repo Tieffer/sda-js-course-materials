@@ -23,11 +23,11 @@ function fizBuzzNumber(number) {
   }
 
   switch (true) {
-    case i % 3 === 0 && i % 5 === 0:
+    case number % 3 === 0 && number % 5 === 0:
       return 'fizzbuzz';
-    case i % 3 === 0:
+    case number % 3 === 0:
       return 'fizz';
-    case i % 5 === 0:
+    case number % 5 === 0:
       return 'buzz';
     default:
       return number;
@@ -41,7 +41,7 @@ function fizBuzzNumber(number) {
  * @throws {Error} i argument is not typeof string
  */
 function passwordValidator(password) {
-  if (typeof unit !== 'string') {
+  if (typeof password !== 'string') {
     throw new Error('argument must be typeof string')
   }
 
@@ -55,7 +55,7 @@ function passwordValidator(password) {
     return false;
   }
 
-  trimmedPassword.split('').forEach(function (char) {
+  password.split('').forEach(function (char) {
     switch (true) {
       case /[a-z]/.test(char):
         matchers.lowerCase++;
